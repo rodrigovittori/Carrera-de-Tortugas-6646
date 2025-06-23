@@ -1,21 +1,29 @@
 """
-# [M4.L1] Carrera de tortugas - Actividad # 3: "Campo de carrera"
-# NOTA: Ésta es la primera actividad práctica del Proyecto, (1 y 2 son teoría)
+# [M4.L1] Carrera de tortugas - Actividad # 4 "Dos Jugadores"
+# Objetivo: Crearemos dos nuevas tortugas quienes serán nuestras primeras participantes
 
-# Objetivo: Crear una tortuga y programar el dibujo de la pista de carreras
+NOTA: Las tortugas TODAVÍA NO AVANZARÁN
 
-Paso Nº 1) Importar turtle y crear nuestra tortuga
-Paso Nº 2) Dibujar nuestra pista de carreras
-            -> Definir la cant. de carriles
-            -> Definir el ancho de cada carril
-            *entre ambos valores van a definir la lognitud de la pista*
-
-            -> Definir espacio para corredores
-            *tener en cuenta la cantidad de tortugas que participarán y dejar espacio entre ellas*
+Paso Nº 1) Agregamos variables globales (velocidad_corredores, cant_tortugas, distancia_entre_tortugas, x e y iniciales)
+Paso Nº 2) Creamos nuestras tortugas y las colocamos en el punto de partida
             
 # Link al repo de GitHub: https://github.com/rodrigovittori/Carrera-de-Tortugas-6646
 """
 import turtle
+
+"""   ##########################
+     # > VARIABLES GLOBALES < #
+    ##########################    """
+
+velocidad_corredores = 5        # Controla la velocidad de la animación (no a la que "corren", sino a la que las dibujamos)
+cant_tortugas = 0               # Contador con la cantidad de corredores (hasta ahora)
+distancia_entre_tortugas = 40   # Distancia (en px) que hay verticalmente entre corredoras
+y_inicial_tortugas = 80
+x_inicial_tortugas = -230
+
+"""   #########################
+     # > PISTA DE CARRERAS < #
+    #########################    """
 
 # Tortuga que dibuja el tablero 🐢 (t)
 t = turtle.Turtle() # Creamos la tortuga
@@ -49,6 +57,41 @@ t.bk(long_secciones_pista)
 t.left(90)
 t.color("black")
 
-######################################
+""" ************************************************************************************************ """
 
-# Colorín colorado el código ha terminado :D
+"""   #############################
+     # > CORREDORAS (TORTUGAS) < #
+    #############################    """
+
+# PRIMERA
+primera = turtle.Turtle()              # Creamos una nueva tortuga
+cant_tortugas += 1                     # La registramos como corredora
+primera.shape("turtle")                # Le damos forma de tortuga
+primera.color("crimson")               # Le asignamos otro color (ROJO)
+primera.speed(0)                       # Aceleramos su animación
+primera.penup()                        # Levantamos el trazo para reubicarla
+
+# La posicionamos DETRÁS de la línea de partida
+#primera.goto(-230, 80)
+primera.goto(x_inicial_tortugas, (y_inicial_tortugas - (distancia_entre_tortugas * (cant_tortugas - 1))))
+primera.speed(velocidad_corredores)    # Cambiamos su velocidad de animación para la carrera
+
+########################################
+# SEGUNDA
+segunda = turtle.Turtle()              # Creamos una nueva tortuga
+cant_tortugas += 1                     # La registramos como corredora
+segunda.shape("turtle")                # Le damos forma de tortuga
+segunda.color("navy")                  # Le asignamos otro color (AZUL)
+segunda.speed(0)                       # Aceleramos su animación
+segunda.penup()                        # Levantamos el trazo para reubicarla
+
+# La posicionamos DETRÁS de la línea de partida
+#segunda.goto(-230, 40)
+segunda.goto(x_inicial_tortugas, (y_inicial_tortugas - (distancia_entre_tortugas * (cant_tortugas - 1))))
+segunda.speed(velocidad_corredores)    # Cambiamos su velocidad de animación para la carrera
+
+########################################
+
+# SPOILER: Por la demo sabemos que habrá una tercera tortuga
+
+""" Colorín colorado el código ha terminado :D """
