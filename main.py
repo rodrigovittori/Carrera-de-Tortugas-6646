@@ -1,9 +1,12 @@
 """
-# [M4.L1] Carrera de tortugas - Actividad # 7 "Tercera go-go-go"
-# Objetivo: Implementar el avance de nuestra tercer tortuga
+# [M4.L1] Carrera de tortugas - Actividad # 8 "Aficionados"
+# Objetivo: Dibujar espectadores para nuestro evento
 
-Pasos: ** Copy, paste, edit **
-            
+Paso Nº 1) Creamos una nueva tortuga para dibujar los espectadores
+Paso Nº 2) La ponemos en posición
+Paso Nº 3) Calculamos un número random de espectadores (por defecto entre 2 y 10)
+Paso Nº 4) Escribimos un bucle for que use dib_espectadores para simular varias tortugas
+
 # Link al repo de GitHub: https://github.com/rodrigovittori/Carrera-de-Tortugas-6646
 """
 
@@ -103,6 +106,30 @@ tercera.penup()                        # Levantamos el trazo para reubicarla
 #tercera.goto(-230, 0)
 tercera.goto(x_inicial_tortugas, (y_inicial_tortugas - (distancia_entre_tortugas * (cant_tortugas - 1))))
 tercera.speed(velocidad_corredores)    # Cambiamos su velocidad de animación para la carrera
+
+########################################
+
+"""   ####################
+     # > ESPECTADORES < #
+    ####################    """
+
+dib_espect = turtle.Turtle()   # Creamos una tortuga que dibujará la silueta de los espectadores
+dib_espect.shape("turtle")     # Le damos forma de tortuga (para usar stamp)
+dib_espect.color("purple")     # Seteamos su color -> próximamente random
+# La ubicamos en posición:
+dib_espect.penup()
+dib_espect.speed(0)
+dib_espect.goto(-190, -120)
+dib_espect.seth(90)
+dib_espect.speed(velocidad_corredores)
+
+# Gracias a un bucle for nuestra tortuga simulará ser más de una (justsu de clones de sombra)
+# Mínimo 2 espectadores - Máx 10
+for i in range(1, random.randint(2,10)):
+    dib_espect.stamp()         # Dejamos huellita/marca de tortuga
+    dib_espect.seth(0)
+    dib_espect.fd(distancia_entre_tortugas/2 + 5)
+    dib_espect.seth(90)
 
 ########################################
 
