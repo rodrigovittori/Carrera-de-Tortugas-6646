@@ -1,22 +1,12 @@
 """
-# [M4.L1] Carrera de tortugas - Actividad # 6 "Moviendo a las dos"
-# Objetivo: Configurar el avance de nuestras tortugas
+# [M4.L1] Carrera de tortugas - Actividad # 7 "Tercera go-go-go"
+# Objetivo: Implementar el avance de nuestra tercer tortuga
 
-NOTA: El movimiento de la tercer tortuga lo implementaremos en el próximo ejercicio
-
-Paso Nº 1: Crear variable que contenga la distancia que debe recorrer una tortuga para ganar
-Paso Nº 2: Agregar bucle donde pidamos predicción del resultado al jugador
-Paso Nº 3: Agregamos variables que registren el avance de CADA tortuga
-Paso Nº 4: Agregamos OTRA variable que registrará si una tortuga ya ha cruzado la meta (tenemos_ganadora)
-Paso Nº 5: Agregamos el bucle de la carrera: while(not tenemos_ganadora)
--> incluír random
-Paso Nº 6: En cada iteración del bucle:
-            1º) Verificamos (if) si alguna cruzó la meta -> hay ganadora
-            2º) Si NINGUNA ha cruzado la meta... las haremos avanzar un cantidad random cada ronda
-Paso Nº 7: Agregamos una condición para mostrar el resultado de la carrera
+Pasos: ** Copy, paste, edit **
             
 # Link al repo de GitHub: https://github.com/rodrigovittori/Carrera-de-Tortugas-6646
 """
+
 import turtle
 import random
 
@@ -182,9 +172,11 @@ while (not tenemos_ganadora):
 
         paso_tortuga = random.randint(1, velocidad_corredores) # Cant de px que avanzará la tortuga esta ronda
         segunda.fd(paso_tortuga)                               # Avanza en la pista
-        distancia_recorrida_tortuga_2 += paso_tortuga          # registro la distancia recorridaç
+        distancia_recorrida_tortuga_2 += paso_tortuga          # registro la distancia recorrida
 
-        # ** IMPLEMENTAR TERCER TORTUGA AQUÍ **
+        paso_tortuga = random.randint(1, velocidad_corredores) # Cant de px que avanzará la tortuga esta ronda
+        tercera.fd(paso_tortuga)                               # Avanza en la pista
+        distancia_recorrida_tortuga_3 += paso_tortuga          # registro la distancia recorrida
 
 ##########################################################################
 
